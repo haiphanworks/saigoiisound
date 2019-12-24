@@ -1,0 +1,67 @@
+.saigoii-artists {
+    padding: calc(1vw + 1rem);
+}
+
+.saigoii-artists-list {
+    position: relative;
+    font-variation-settings: "wght"600, "wdth"150;
+    font-size: 8vw;
+
+    @include breakpoint(md) {
+        font-size: 6vw;
+    }
+
+    li {
+        white-space: normal;
+    }
+}
+
+.saigoii-artist {
+    position: relative;
+    cursor: default;
+
+    .saigoii-artist-name {
+        position: relative;
+        display: inline;
+        font-size: 7vw;
+        text-transform: uppercase;
+        font-variation-settings: "wght"800, "wdth"150;
+    }
+
+    .saigoii-artist-time {
+        display: inline;
+        font-size: 3vw;
+        vertical-align: super;
+        font-variation-settings: "wght"500, "wdth"150;
+    }
+
+    .saigoii-artist-image {
+        position: absolute;
+        top: 50%;
+        left: 5vw;
+        z-index: 1;
+        display: block;
+        width: 25vw;
+        opacity: 0;
+        transform: translateY(-50%) scale(.8);
+        transition: all .25s linear;
+        pointer-events: none;
+    }
+
+    &:hover {
+        .saigoii-artist-name {
+            z-index: 2;
+        }
+
+        .saigoii-artist-time {
+            z-index: 2;
+        }
+
+        .saigoii-artist-image {
+            display: block;
+            transform: translateY(-50%) scale(1);
+            opacity: 1;
+            transition: all .25s linear;
+        }
+    }
+}

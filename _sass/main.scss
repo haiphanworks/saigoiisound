@@ -1,0 +1,146 @@
+@import 'mixins';
+@import 'fonts';
+
+:root {
+    --background: white;
+    --font-size: 1.5vw;
+    --font-size-mobile: 4vw;
+
+    --black: #000000;
+    --primary-color: var(--purple);
+
+    --purple: #ff00ff;
+    --orange: #ff6f00;
+    --green: #6f7f6f;
+}
+
+.has-paragraphs a {
+    border-bottom-width: .5px;
+}
+
+body {
+    font-family: 'Agrandir';
+    font-variation-settings: "wght"500, "wdth"150;
+    color: var(--black);
+}
+
+.has-paragraphs> :not(:last-child) {
+    margin-bottom: 1em;
+}
+
+.saigoii-title {
+    display: inline-flex;
+    position: relative;
+    margin-bottom: .5em;
+    font-variation-settings: "wght"600, "wdth"150;
+    font-size: 8vw;
+
+    @include breakpoint(md) {
+        font-size: 6vw;
+    }
+
+    &:after {
+        content: '';
+        position: absolute;
+        top: 0;
+        left: 50%;
+        display: block;
+        width: 25vw;
+        height: 8vw;
+        background: var(--purple);
+        z-index: -1;
+        border-radius: 50%;
+        transform: translateX(-50%) rotate(-10deg);
+    }
+
+    &.is-green {
+        &:after {
+            background: var(--green);
+        }
+    }
+
+    &.is-orange {
+        &:after {
+            background: var(--orange);
+        }
+    }
+}
+
+@import 'hero';
+@import 'footer';
+@import 'artists';
+
+
+
+.saigoii-about {
+    position: relative;
+    display: block;
+    padding: calc(1vw + 1rem);
+    font-size: 4vw;
+    font-variation-settings: "wght"500, "wdth"150;
+
+
+    &-content {
+        width: 100%;
+
+        @include breakpoint(md) {
+            width: 75%;
+        }
+    }
+
+    &-background {
+        position: absolute;
+        top: 0;
+        left: 0;
+        z-index: -2;
+
+        display: flex;
+        flex-direction: column;
+
+        width: 100%;
+        height: 100%;
+
+        &-top {
+            margin-top: 12.5vw;
+        }
+
+        &-middle {
+            display: block;
+            height: 100%;
+            background: #ff6f00;
+            margin-top: -1rem;
+            margin-bottom: -1rem;
+        }
+    }
+}
+
+.saigoii-organizers {
+    >.saigoii-organizers-title {
+        &:not(:first-child) {
+            margin-top: 2rem;
+        }
+    }
+
+    a {
+        border-bottom: 0;
+    }
+}
+
+.saigoii-organizers-wrapper {
+    display: grid;
+    grid-auto-flow: column;
+    grid-auto-columns: minmax(0, max-content);
+    grid-gap: 4vw;
+
+    .saigoii-organizers-item {
+        display: block;
+
+        img {
+            max-height: 75px;
+
+            @include breakpoint(md) {
+                max-height: 7.5vw;
+            }
+        }
+    }
+}

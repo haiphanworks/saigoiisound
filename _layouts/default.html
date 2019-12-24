@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>{% if page.url == "/" %}
+        {{ site.data.settings.basic_settings.site_title }} — Multidisciplinary
+        Designer
+        {% else %}{{ page.title }} — {{ site.data.settings.basic_settings.site_title }}{% endif %}
+    </title>
+    {% seo %}
+    <!-- Stylesheets -->
+    <link rel="stylesheet" href="https://git.haiphan.design/harmony/harmony.css">
+    <link rel="stylesheet" href="{{ "/assets/addons/kursor/kursor.css" | relative_url }}">
+    <link rel="stylesheet" href="{{ "/assets/addons/fontawesome/all.css" | relative_url }}">
+    <link rel="stylesheet" href="{{ "/assets/css/style.css" | relative_url }}">
+
+    {% feed_meta %}
+    {% if jekyll.environment == 'production' and site.google_analytics %}
+    {% include google-analytics.html %}
+    {% endif %}
+</head>
+
+<body>
+
+
+    {{ content }}
+
+    <!-- Javascript -->
+    {%- include javascript.html -%}
+
+</body>
+
+</html>

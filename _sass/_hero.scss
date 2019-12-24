@@ -1,0 +1,169 @@
+.saigoii-hero {
+    display: flex;
+    flex-direction: column;
+
+    width: 100%;
+    min-height: 100vh;
+
+    padding: calc(1vw + 1rem);
+}
+
+.saigoii-hero-title {
+    position: relative;
+
+    font-family: 'Nostrav';
+    line-height: 1;
+    font-size: 10vw;
+
+    margin-bottom: 10vw;
+
+    &-mobile {
+        @include breakpoint(md) {
+            display: none;
+        }
+    }
+
+    &-desktop {
+        display: none;
+
+        @include breakpoint(md) {
+            display: flex;
+        }
+    }
+
+    p {
+        white-space: nowrap;
+    }
+}
+
+.saigoii-hero-organizers {
+    display: grid;
+    grid-auto-flow: column;
+    grid-auto-columns: minmax(0, max-content);
+    grid-gap: 4vw;
+
+
+    margin-bottom: 1rem;
+    margin-top: auto;
+
+    @include breakpoint(md) {
+        grid-gap: 2vw;
+
+        margin-bottom: 6rem;
+        margin-top: 0;
+    }
+
+    .saigoii-hero-organizers-item {
+        display: block;
+
+        img {
+            max-height: 75px;
+
+            @include breakpoint(md) {
+                max-height: 7.5vw;
+            }
+        }
+    }
+}
+
+.saigoii-tdl {
+    // position: sticky;
+    // bottom: 0;
+    // padding: calc(1vw + 1rem);
+    // padding-top: 0;
+    margin-top: auto;
+
+    @include breakpoint(md) {
+        margin-top: auto;
+    }
+
+    >div {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+
+        text-align: center;
+        font-variation-settings: "wght"800, "wdth"150;
+        text-transform: uppercase;
+
+        >div {
+            &:first-child {
+                text-align: left;
+            }
+
+            &:last-child {
+                text-align: right;
+            }
+        }
+    }
+
+    .saigoii-tdl-mobile {
+        @include breakpoint(md) {
+            display: none;
+        }
+    }
+
+    .saigoii-tdl-desktop {
+        display: none;
+
+        @include breakpoint(md) {
+            display: flex;
+        }
+    }
+}
+
+.saigoii-hero-background {
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: -1;
+
+    width: 100vw;
+    height: 100vh;
+
+    background-image: url(/assets/images/hero-background.png);
+    background-repeat: repeat;
+    background-position-y: 30vh;
+    background-size: 90vh auto;
+
+    @include breakpoint(md) {
+        background-position-y: center;
+        background-size: contain;
+
+        animation: herobg 5s linear infinite;
+    }
+}
+
+@keyframes herobg {
+    0% {
+        background-position-x: 0;
+    }
+
+    100% {
+        background-position-x: -100vw;
+    }
+}
+
+.saigoii-hero-ticket {
+    position: absolute;
+    top: calc(100% + 5vh);
+    right: -15vw;
+
+    display: inline-flex;
+    border-radius: 50%;
+    border: .25rem solid;
+    padding: .75em 2.5em .6em 2.5em;
+
+    transform: rotate(-10deg);
+
+    text-align: center;
+    font-family: 'Agrandir';
+    font-variation-settings: "wght"500, "wdth"150;
+    font-size: 6vw;
+
+    @include breakpoint(md) {
+        top: calc(100% + 5vh);
+        right: -5vw;
+        font-size: 3vw;
+    }
+}
