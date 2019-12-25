@@ -4,6 +4,8 @@
 
 .saigoii-artists-list {
     position: relative;
+    display: flex;
+    flex-direction: column;
     font-variation-settings: "wght"600, "wdth"150;
     font-size: 8vw;
 
@@ -18,6 +20,8 @@
 
 .saigoii-artist {
     position: relative;
+    display: block;
+    width: max-content;
     cursor: default;
 
     .saigoii-artist-name {
