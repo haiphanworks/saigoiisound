@@ -20,7 +20,7 @@
 }
 
 .has-paragraphs a {
-    border-bottom-width: .5px;
+    border-bottom-width: .075rem;
 }
 
 body {
@@ -65,6 +65,7 @@ body {
 .saigoii-title {
     display: inline-flex;
     position: relative;
+    z-index: 2;
     margin-bottom: .5em;
     font-variation-settings: "wght"600, "wdth"150;
     font-size: 8vw;
@@ -155,14 +156,18 @@ body {
 }
 
 .saigoii-organizers {
-    >.saigoii-organizers-title {
-        &:not(:first-child) {
-            margin-top: 2rem;
-        }
-    }
+    display: grid;
+    grid-auto-columns: minmax(0, max-content);
+    grid-gap: calc(1vw + 2rem);
 
     a {
         border-bottom: 0;
+    }
+
+    @include breakpoint(md) {
+        grid-auto-flow: column;
+        grid-gap: 12vw;
+
     }
 }
 
@@ -170,13 +175,13 @@ body {
     display: grid;
     grid-auto-flow: column;
     grid-auto-columns: minmax(0, max-content);
-    grid-gap: 4vw;
+    grid-gap: 30px;
 
     .saigoii-organizers-item {
         display: block;
 
         img {
-            max-height: 75px;
+            max-height: 70px;
 
             @include breakpoint(md) {
                 max-height: 7.5vw;
@@ -223,7 +228,6 @@ body {
 
 
 .saigoii-giveaway {
-
     padding: calc(1vw + 1rem);
 
     &-content {
@@ -232,6 +236,37 @@ body {
         @include breakpoint(md) {
             max-width: 75%;
             font-size: 3vw;
+        }
+    }
+}
+
+
+
+
+
+.saigoii-merch {
+    padding: calc(1rem + 1vw);
+    background-color: var(--green);
+    padding-bottom: calc(2rem + 2vw);
+
+    &-wrapper {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        grid-gap: calc(1rem + 1vw);
+    }
+
+    &-item {
+        &:nth-child(2n+2) {
+            margin-top: -10%;
+        }
+
+        &:nth-child(2n+1) {
+            margin-top: 25%;
+        }
+
+        &-name {
+            margin-top: 5vw;
+            text-align: center;
         }
     }
 }

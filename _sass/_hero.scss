@@ -6,6 +6,8 @@
     min-height: 100vh;
 
     padding: calc(1vw + 1rem);
+
+    transition: all .1s linear;
 }
 
 .saigoii-hero-title {
@@ -33,6 +35,32 @@
 
     p {
         white-space: nowrap;
+    }
+}
+
+.saigoii-hero-background {
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: -1;
+
+    width: 100vw;
+    height: 100%;
+
+    background-image: url(/assets/images/hero-bg.svg);
+    background-repeat: repeat-x;
+    background-position-y: center;
+    background-size: auto 80vh;
+    animation: herobg 10s linear infinite;
+}
+
+@keyframes herobg {
+    0% {
+        background-position-x: 0;
+    }
+
+    100% {
+        background-position-x: -480vh;
     }
 }
 
@@ -112,37 +140,6 @@
     }
 }
 
-.saigoii-hero-background {
-    position: absolute;
-    top: 0;
-    left: 0;
-    z-index: -1;
-
-    width: 100vw;
-    height: 100vh;
-
-    background-image: url(/assets/images/hero-background.png);
-    background-repeat: repeat;
-    background-position-y: 30vh;
-    background-size: 90vh auto;
-
-    @include breakpoint(md) {
-        background-position-y: center;
-        background-size: contain;
-
-        // animation: herobg 5s linear infinite;
-    }
-}
-
-@keyframes herobg {
-    0% {
-        background-position-x: 0;
-    }
-
-    100% {
-        background-position-x: -100vw;
-    }
-}
 
 .saigoii-hero-ticket {
     position: absolute;

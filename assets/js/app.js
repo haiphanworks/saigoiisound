@@ -22,7 +22,7 @@ window.onload = function () {
 };
 
 window.onresize = function () {
-    heroHeight();
+    // heroHeight();
 };
 
 
@@ -133,9 +133,11 @@ $(document).ready(function () {
     $('.marquee').marqueeify({
         speed: 300,
         bumpEdge: function () {
+            var colorList = ['#ff00ff', '#ff6f00', '#6f7f6f', '#ff00ff', '#ff6f00', '#6f7f6f', '#ff00ff', '#ff6f00', '#6f7f6f'];
+            var newColor = colorList[Math.floor(Math.random() * colorList.length)];
             // var newColor = "hsl(" + Math.floor(Math.random() * 360) + ", 100%, 50%)";
-            // $('.marquee svg').css('fill', newColor);
-            $('.marquee').toggleClass('is-bump');
+            $('.marquee svg').css('fill', newColor);
+            // $('.marquee').toggleClass('is-bump');
         }
     });
 });

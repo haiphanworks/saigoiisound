@@ -15,7 +15,8 @@ title: Home
     </svg> -->
 
     <svg viewBox="0 0 500 350">
-        <path d="M461.4 12.3c-51.7-29.8-118.6 18.6-170.6 108.5-6.1 10.5-22.7 29.7-33.1 32.2-58.4 13.6 40.2-104.7-31-140.7C173.4-14.7 91 31.2 39.1 121.2s-52.2 183.5-.5 213.3c51.7 29.8 110.8 1.1 162.8-88.8 6.1-10.5 27.6-44.6 41-48.3 62.9-17.3-47.9 113.9 35.9 142.5 56.5 19.2 130.8-20.7 182.7-110.7s52-187.1.4-216.9z"/>
+        <path
+            d="M461.4 12.3c-51.7-29.8-118.6 18.6-170.6 108.5-6.1 10.5-22.7 29.7-33.1 32.2-58.4 13.6 40.2-104.7-31-140.7C173.4-14.7 91 31.2 39.1 121.2s-52.2 183.5-.5 213.3c51.7 29.8 110.8 1.1 162.8-88.8 6.1-10.5 27.6-44.6 41-48.3 62.9-17.3-47.9 113.9 35.9 142.5 56.5 19.2 130.8-20.7 182.7-110.7s52-187.1.4-216.9z" />
     </svg>
 
 </a>
@@ -65,7 +66,8 @@ title: Home
             </div>
         </div>
     </div>
-    <div class="saigoii-hero-background"></div>
+    <div class="saigoii-hero-background">
+    </div>
 </div>
 
 <div class="saigoii-about">
@@ -165,33 +167,55 @@ title: Home
     <div class="saigoii-giveaway-content has-paragraphs">
         <p>Grab yourself a chance to win a pair G-Dragon x Air Force 1 'Para-Noise' &mdash; the most desirable sneakers
             recently.</p>
-        <p>Only at SaigoiiSound. <br class="is-hidden-xs">Sponsored by <a href="#">SIMPLE4WHAT</a>.</p>
+        <p>Only at SaigoiiSound. <br>Sponsored by <a href="#">SIMPLE4WHAT</a>.</p>
+    </div>
+</div>
+
+<img src="/assets/images/merch-bg-top.svg" class="saigoii-merch-background-top" style="margin-top: -20vw">
+<div class="saigoii-merch">
+    <div class="saigoii-title is-white">Merchandise</div>
+    <div class="saigoii-merch-wrapper">
+        {% for i in (1..4) %}
+        <div class="saigoii-merch-item">
+            <img src="/assets/images/tshirt.png" alt="">
+            <div class="saigoii-merch-item-name">Plain Black T-Shirt</div>
+        </div>
+        {% endfor %}
     </div>
 </div>
 
 
-
-
-<img src="/assets/images/footer-bg-top.svg" class="saigoii-footer-background-top">
+<img src="/assets/images/footer-bg-top.svg" class="saigoii-footer-background-top"
+    style="background-color: var(--green);">
 <div class="saigoii-footer">
-    <div class="saigoii-footer-credit">
-        <p>SaigoiiSound is organized by <a href="https://saigoii.com/">Saigoii</a> in collaboration with <a
-                href="https://allaccess.vn/">AllAccess</a>, <a href="#">Wow Ent.</a> and <a
-                href="https://www.instagram.com/vietnamesestreetstylegroup/">VSSG</a>.</p>
-
-    </div>
     <div class="saigoii-organizers">
-        <div class="saigoii-organizers-title">Media Partners</div>
-        <div class="saigoii-organizers-wrapper" style="filter: invert(1);">
-            <a class="saigoii-organizers-item" href="https://allaccess.vn">
-                <img src="/assets/images/logo-allaccess.png" alt="">
-            </a>
-            <a class="saigoii-organizers-item" href="https://saigoii.com">
-                <img src="/assets/images/logo-saigoii.png" alt="">
-            </a>
-            <a class="saigoii-organizers-item" href="https://www.instagram.com/vietnamesestreetstylegroup/">
-                <img src="/assets/images/logo-vssg.png" alt="">
-            </a>
+        <div class="saigoii-organizers-col">
+            <div class="saigoii-organizers-title">Organizers</div>
+            <div class="saigoii-organizers-wrapper" style="filter: invert(1);">
+                <a class="saigoii-organizers-item" href="https://allaccess.vn">
+                    <img src="/assets/images/logo-allaccess.png" alt="">
+                </a>
+                <a class="saigoii-organizers-item" href="https://saigoii.com">
+                    <img src="/assets/images/logo-saigoii.png" alt="">
+                </a>
+                <a class="saigoii-organizers-item" href="https://www.instagram.com/vietnamesestreetstylegroup/">
+                    <img src="/assets/images/logo-vssg.png" alt="">
+                </a>
+            </div>
+        </div>
+        <div class="saigoii-organizers-col">
+            <div class="saigoii-organizers-title">Media Partners</div>
+            <div class="saigoii-organizers-wrapper" style="filter: invert(1);">
+                <a class="saigoii-organizers-item" href="https://allaccess.vn">
+                    <img src="/assets/images/logo-allaccess.png" alt="">
+                </a>
+                <a class="saigoii-organizers-item" href="https://saigoii.com">
+                    <img src="/assets/images/logo-saigoii.png" alt="">
+                </a>
+                <a class="saigoii-organizers-item" href="https://www.instagram.com/vietnamesestreetstylegroup/">
+                    <img src="/assets/images/logo-vssg.png" alt="">
+                </a>
+            </div>
         </div>
     </div>
     <div class="saigoii-footer-subscription">
