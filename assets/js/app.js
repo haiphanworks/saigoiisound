@@ -17,6 +17,22 @@
 // });
 
 
+window.onload = function () {
+    heroHeight();
+};
+
+window.onresize = function () {
+    heroHeight();
+};
+
+
+
+
+function heroHeight() {
+    document.querySelector('.saigoii-hero').style.minHeight = window.innerHeight + 'px';
+}
+
+
 
 
 (function ($, window, undefined) {
