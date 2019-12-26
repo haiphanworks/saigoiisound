@@ -20,6 +20,10 @@
     }
 }
 
+.sg-footer-organizers {
+    filter: invert(1);
+}
+
 .saigoii-footer-background-top {
     margin-bottom: -1px;
 }
@@ -48,6 +52,7 @@
             border-radius: 0;
             font: inherit;
             border: none;
+            white-space: nowrap;
         }
     }
 }

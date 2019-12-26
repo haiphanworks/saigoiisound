@@ -1,0 +1,58 @@
+.saigoii-landing {
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    height: 100%;
+    background-color: var(--black);
+    color: var(--white);
+
+    background-image: url(/assets/images/landing-bg.svg);
+    background-repeat: repeat-y;
+    background-position-x: center;
+    background-position-y: top;
+    background-size: 90vw auto;
+    animation: landingbg 4s linear infinite;
+
+    @include breakpoint(md) {
+        animation: landingbg 6s linear infinite;
+    }
+}
+
+@keyframes landingbg {
+    0% {
+        background-position-y: 0;
+    }
+
+    100% {
+        background-position-y: 189vw;
+    }
+}
+
+.saigoii-landing-wrapper {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+
+    width: calc(100vmin - 2rem);
+    height: calc(100vmin - 2rem);
+
+    padding-top: 5vmin;
+    padding-bottom: 5vmin;
+
+    @include breakpoint(md) {
+        padding-top: 15vmin;
+        padding-bottom: 15vmin;
+    }
+}
+
+.saigoii-landing-organizers {
+    margin-bottom: auto;
+}
+
+.saigoii-landing-date {
+    margin-top: auto;
+    font-variation-settings: "wght"800, "wdth"150;
+}

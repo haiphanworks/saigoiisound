@@ -29,7 +29,8 @@ window.onresize = function () {
 
 
 function heroHeight() {
-    document.querySelector('.saigoii-hero').style.minHeight = window.innerHeight + 'px';
+    // document.querySelector('.saigoii-hero').style.minHeight = window.innerHeight + 'px';
+    document.querySelector('.sg-hero').style.minHeight = window.innerHeight + 'px';
 }
 
 
