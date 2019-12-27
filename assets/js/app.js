@@ -129,16 +129,55 @@ function heroHeight() {
     };
 })(jQuery, window);
 
+var oldColor = '#ff00ff';
+
+
 $(document).ready(function () {
 
     $('.marquee').marqueeify({
         speed: 300,
         bumpEdge: function () {
-            var colorList = ['#ff00ff', '#ff6f00', '#6f7f6f', '#ff00ff', '#ff6f00', '#6f7f6f', '#ff00ff', '#ff6f00', '#6f7f6f'];
+            // console.log(`old: ${oldColor}`);
+            var colorList = ['#ff00ff', '#ff6f00', '#6f7f6f'];
             var newColor = colorList[Math.floor(Math.random() * colorList.length)];
-            // var newColor = "hsl(" + Math.floor(Math.random() * 360) + ", 100%, 50%)";
-            $('.marquee svg').css('fill', newColor);
-            // $('.marquee').toggleClass('is-bump');
+            if (newColor == oldColor) {
+                while (newColor == oldColor) {
+                    var newColor = colorList[Math.floor(Math.random() * colorList.length)];
+                }
+                $('.marquee svg').css('fill', newColor);
+            } else {
+                $('.marquee svg').css('fill', newColor);
+
+            }
+            oldColor = newColor;
+            // console.log(newColor);
         }
+    });
+});
+
+
+
+$(document).ready(function () {
+    // Add smooth scrolling to all links
+    $("a").on('click', function (event) {
+
+        // Make sure this.hash has a value before overriding default behavior
+        if (this.hash !== "") {
+            // Prevent default anchor click behavior
+            event.preventDefault();
+
+            // Store hash
+            var hash = this.hash;
+
+            // Using jQuery's animate() method to add smooth page scroll
+            // The optional number (800) specifies the number of milliseconds it takes to scroll to the specified area
+            $('html, body').animate({
+                scrollTop: $(hash).offset().top
+            }, 800, function () {
+
+                // Add hash (#) to URL when done scrolling (default click behavior)
+                window.location.hash = hash;
+            });
+        } // End if
     });
 });
