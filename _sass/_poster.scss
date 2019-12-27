@@ -462,6 +462,7 @@
                 opacity: 0.25;
                 transform: scale(0.8);
                 transition: all 0.1s linear;
+                width: 100%;
 
                 &:hover {
                     opacity: 1;
@@ -535,6 +536,8 @@
     }
 
     &:hover {
+        width: 100%;
+
         .sg-ticket-image {
             .sg-ticket-image-stars {
                 animation: pulse 1s infinite;
